@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+  <Appenders>
+    <File name="File" bufferedIO="true" fileName="logs/log4j2-file-sync-${date:HH_mm_ss_SSS}.log">
+      <PatternLayout pattern="%d %p %m%n" />
+    </File>
+    <Console name="StdErr" target="SYSTEM_STDERR" ignoreExceptions="false">
+      <PatternLayout pattern="%d [%t] %-5p %m%n"/>
+    </Console>
+  </Appenders>
+  <Loggers>
+    <Root level="all" includeLocation="false">
+      <AppenderRef ref="File" />
+      <!--<AppenderRef ref="StdErr" />-->
+    </Root>
+  </Loggers>
+</Configuration>

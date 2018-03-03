@@ -1,0 +1,26 @@
+apply plugin: 'java'
+apply plugin: 'application'
+
+mainClassName = 'pl.lichnerowicz.hcsvntdracones.ActiveMQStats'
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    compile "org.apache.logging.log4j:log4j-api:2.10.0"
+    compile "org.apache.logging.log4j:log4j-core:2.10.0"
+}
+
+jar {
+    baseName = 'amq-stats'
+    version =  '0.1.0'
+}
+
+compileJava {
+    options.encoding = 'UTF-8'
+    options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
+}
